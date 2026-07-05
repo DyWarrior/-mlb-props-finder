@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLB Props Finder — Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0B1220;
+    --seam: #B5322C;
+    --amber: #D98A2B;
+    --chalk: #F5F1E6;
+    --dim: #8C93A6;
+    --panel: #101A2E;
+    --panel-line: #223050;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--ink);
+    color:var(--chalk);
+    font-family:'Inter',sans-serif;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--panel-line);
+    border-radius:10px;
+    padding:36px 32px;
+    width:100%;
+    max-width:360px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    color:var(--amber);
+    text-transform:uppercase;
+  }
+  h1{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:24px;
+    margin:6px 0 24px;
+  }
+  label{
+    display:block;
+    font-size:12px;
+    color:var(--dim);
+    margin-bottom:6px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  input[type=password]{
+    width:100%;
+    background:#0B1424;
+    border:1px solid var(--panel-line);
+    color:var(--chalk);
+    padding:11px 12px;
+    border-radius:6px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    margin-bottom:16px;
+  }
+  input:focus{
+    outline:2px solid var(--amber);
+    outline-offset:1px;
+  }
+  button{
+    width:100%;
+    background:var(--seam);
+    color:var(--chalk);
+    border:none;
+    padding:12px 22px;
+    border-radius:6px;
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.03em;
+    cursor:pointer;
+  }
+  button:hover{ background:#992722; }
+  .error{
+    color:#E88;
+    font-size:13px;
+    margin-bottom:16px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">MLB Props Finder</div>
+  <h1>Enter Password</h1>
+  <form method="POST">
+    {% if error %}<div class="error">{{ error }}</div>{% endif %}
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" autofocus required>
+    <button type="submit">Log In</button>
+  </form>
+</div>
+</body>
+</html>
